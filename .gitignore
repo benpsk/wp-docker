@@ -1,4 +1,4 @@
-themes
-plugins 
-.env
+wordpress-image/themes
+wordpress-image/plugins 
+wordpress-image/.env
 
