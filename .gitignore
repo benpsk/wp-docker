@@ -2,3 +2,5 @@ wordpress-image/themes
 wordpress-image/plugins 
 wordpress-image/.env
 
+php-image/.env
+php-image/wordpress 
