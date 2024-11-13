@@ -15,7 +15,7 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the custom php.ini into the PHP configuration directory
-COPY php.ini /usr/local/etc/php/conf.d/
+COPY php.ini $PHP_INI_DIR/conf.d/
 
 # Copy custom Apache configuration to the container
 COPY apache2.conf /etc/apache2/sites-available/000-default.conf

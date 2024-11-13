@@ -3,6 +3,7 @@ services:
     build:  # Use `build` instead of `image`
       context: ./docker
       dockerfile: Dockerfile
+    command: bash -c "chown -R www-data:www-data /var/www/html/wp-content && apache2-foreground"
     restart: unless-stopped
     ports:
       - 8080:80
@@ -13,8 +14,8 @@ services:
       WORDPRESS_DB_NAME: ${DB_NAME}
     volumes:
       - wordpress:/var/www/html
-      - ./themes:/var/www/html/wp-content/themes
-      - ./plugins:/var/www/html/wp-content/plugins
+      - ./themes:/var/www/html/wp-content/themes/
+      - ./plugins:/var/www/html/wp-content/plugins/
     depends_on:
       db:
         condition: service_healthy
