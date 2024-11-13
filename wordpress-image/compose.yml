@@ -3,7 +3,6 @@ services:
     build:  # Use `build` instead of `image`
       context: ./docker
       dockerfile: Dockerfile
-    command: bash -c "chown -R www-data:www-data /var/www/html/wp-content && apache2-foreground"
     restart: unless-stopped
     ports:
       - 8080:80
